@@ -4,6 +4,10 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
+import 'normalize.css'
+import 'view-design/dist/styles/iview.css'
+import '@/style/index.scss'
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -1,0 +1,49 @@
+/* CSS */
+body{
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+#app{
+  height: 100%;
+  >.ivu-layout{
+    >.layout-header-affix{
+      >.ivu-affix{
+        width: 100%!important;
+        left: inherit!important;
+      }
+    }
+    height: 100%;
+    >.ivu-layout-sider{
+      width: 250px;
+    }
+    >.ivu-layout{
+      .ivu-layout-header{
+        background-color: white;
+        padding: 0;
+        z-index: 1000;
+      }
+      .ivu-layout-content{
+        background-color: #e5e9ec;
+        padding-top: 20px;
+        >div{
+          height: 100%;
+          box-sizing: border-box;
+          background-color: white;
+          margin: 0 20px;
+          padding: 15px 15px 0 15px;
+        }
+      }
+    }
+  }
+}
