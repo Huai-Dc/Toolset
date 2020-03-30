@@ -7,7 +7,7 @@
                     <Col span="6">color(颜色)</Col>
                     <Col span="15"><Input v-model="color"/></Col>
                     <Col span="3">
-                        <ColorPicker @on-change="changeColor" v-model="color"/>
+                      <ColorPicker @on-change="changeColor" v-model="color"></ColorPicker>
                     </Col>
                 </Row>
                 <Row class="w400">
@@ -53,7 +53,7 @@
             Icon,
             Col,
             Alert,
-            ColorPicker
+            ColorPicker,
         },
         data() {
             return {

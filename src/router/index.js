@@ -9,7 +9,25 @@ const constantRouterMap = [
         path: '',
         component: Layout,
         redirect: 'homeIndex',
+        children: [
+            {
+                path: 'homeIndex',
+                name: 'HomeIndex',
+                component: () => import("@/views/Home"),
+                meta: {
+                    title: '首页',
+                    describe: '首页',
+                    icon: 'md-home',
+                }
+            }
+        ]
+    },
+    {
+        path: '/cssTools',
+        component: Layout,
         meta: {
+            title: 'css工具',
+            icon: '',
             activeKey: 0,
         },
         children: [

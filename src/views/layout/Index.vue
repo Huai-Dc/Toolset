@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <Sider hide-trigger>
+        <Sider hide-trigger width="240">
             <MSider></MSider>
         </Sider>
         <Layout>
