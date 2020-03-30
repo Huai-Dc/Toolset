@@ -4,6 +4,7 @@
       配色学习
       http://v.bootstrapmb.com/2019/10/plij06445/pages/dashboards/dashboard.html
       http://www.bootstrapmb.com/tag/houtaixitong
+      https://zhile.io/custom-license.html?_blank
   </div>
 </template>
 
