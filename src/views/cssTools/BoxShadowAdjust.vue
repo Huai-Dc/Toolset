@@ -10,12 +10,19 @@
                                 show-input></Slider>
                     </Col>
                 </Row>
+                <Row>
+                    <Col span="5">阴影颜色</Col>
+                    <Col span="19">
+                        <ColorPicker @on-change="showShadow" v-model="color"></ColorPicker>
+                    </Col>
+                </Row>
             </div>
         </div>
         <div class="part-right">
             <div class="demo-preview">
                 <div class="demo-box"
-                     :style="{ boxShadow: resultStyle}">box</div>
+                     :style="resultStyle">
+                </div>
             </div>
             <div class="style-code-area">
                 {{resultCode}}
@@ -36,7 +43,7 @@
 </template>
 
 <script>
-    import { Row, Col, Alert, Icon, Input, Slider } from 'view-design';
+    import { Row, Col, Alert, Icon, Input, Slider, ColorPicker } from 'view-design';
 
     export default {
         name: 'BoxShadowAdjust',
@@ -46,7 +53,7 @@
             Alert,
             Icon,
             Input,
-            Slider
+            Slider, ColorPicker
         },
         data() {
             return {
@@ -70,9 +77,9 @@
                         range: [0, 20]
                     }
                 },
-                color: '#333333',
+                color: '#6e6e6e',
                 resultCode: '',
-                resultStyle: '2px 2px 6px ##333333;',
+                resultStyle: {},
             };
         },
         mounted() {
@@ -88,11 +95,15 @@
                 let shadowHOffset = shadow.hShadow.value + shadow.hShadow.unit;
                 let shadowVOffset = shadow.vShadow.value + shadow.vShadow.unit;
                 let shadowBlur = shadow.blur.value + shadow.blur.unit;
-                let shadowColor = '#' + this.color;
+                let shadowColor = this.color;
 
                 theShadow = shadowHOffset + ' ' + shadowVOffset + ' ' + shadowBlur + ' ' + shadowColor;
 
-                this.resultStyle = theShadow;
+                this.resultStyle = {
+                    '-moz-box-shadow': theShadow,
+                    '-webkit-box-shadow': theShadow,
+                    'box-shadow': theShadow,
+                };
 
                 this.resultCode = '-moz-box-shadow:' + theShadow + '; -webkit-box-shadow:' + theShadow + '; box-shadow:' + theShadow + ';';
             }
@@ -129,7 +140,7 @@
             flex: 1;
 
             .style-code-area {
-                height: 20px;
+                height: 50px;
             }
 
             .demo-preview {
