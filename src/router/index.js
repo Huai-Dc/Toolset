@@ -57,6 +57,26 @@ const constantRouterMap = [
             }
         ]
     },
+    {
+        path: '/threejs',
+        component: Layout,
+        meta: {
+            title: 'THREEJS',
+            activeKey: '2'
+        },
+        children: [
+            {
+                path: 'meshqem',
+                name: 'meshqem',
+                component: () => import('@/views/threejs/MeshQEM/Index'),
+                meta: {
+                    title: '模型减面',
+                    describe: 'QEM塌陷算法实现',
+                    activeKey: '2-0'
+                }
+            },
+        ]
+    }
 ];
 
 const router = new VueRouter({
