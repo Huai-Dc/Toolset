@@ -115,7 +115,6 @@
     .adjust-boxShadow-content {
         display: flex;
         flex-direction: row;
-
         .part-left {
             width: 350px;
             border: 1px solid #dbdfe2;

@@ -11,9 +11,10 @@ module.exports = {
     output: {
         path: path.join(__dirname, dllPath), // 打包后输出位置
         filename: '[name].dll.js',
-        library: '[name]_library'
+        library: '[name]_library',
         // 此处是给DllPlugin 的name
         // 需要和底下 plugin name 保持一致
+        globalObject: 'this'
     },
     plugins: [
         // 清除之前的dll 文件
